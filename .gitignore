@@ -3,3 +3,13 @@ temp/*
 *~
 *.dat
 *.swp
+*#
+*.csv
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*/.#*

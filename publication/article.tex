@@ -1,0 +1,540 @@
+%% This is file `elsarticle-template-2-harv.tex',
+%%
+%% Copyright 2009 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%%
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+%%
+%% $Id: elsarticle-template-2-harv.tex 155 2009-10-08 05:35:05Z rishi $
+%% $URL: http://lenova.river-valley.com/svn/elsbst/trunk/elsarticle-template-2-harv.tex $
+%%
+\documentclass[preprint,authoryear,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,authoryear,1p,times]{elsarticle}
+%% \documentclass[final,authoryear,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,authoryear,3p,times]{elsarticle}
+%% \documentclass[final,authoryear,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,authoryear,5p,times]{elsarticle}
+%% \documentclass[final,authoryear,5p,times,twocolumn]{elsarticle}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+%% \usepackage{graphics}
+%% or use the graphicx package for more complicated commands
+%% \usepackage{graphicx}
+%% or use the epsfig package if you prefer to use the old commands
+%% \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+\usepackage{lineno}
+\usepackage{amsmath}
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon (default)
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   authoryear - selects author-year citations (default)
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%   longnamesfirst  -  makes first citation full author list
+%%
+%% \biboptions{longnamesfirst,comma}
+
+% \biboptions{}
+
+\journal{Ecological Modelling}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{The arithmetic mean is not appropriate in multiplicative processes}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+\author{Yvan ~Richard\corref{cor1}}
+\ead{yvan@dragonfly.co.nz}
+\ead[url]{http://www.dragonfly.co.nz}
+\cortext[cor1]{Corresponding author}
+\author{Edward R. Abraham}
+\author{Finlay N. Thompson}
+\address{Dragonfly Science, PO Box 27535, Wellington 6141, New Zealand}
+
+\begin{abstract}
+%% Text of abstract
+  Most processes studied in ecological modelling are fundamentally
+  multiplicative rather than additive. The average of rates such as
+  population growth and survival should therefore be represented by
+  their geometric mean. However, the statistical distributions that
+  are most commonly used are parametrised according to their
+  arithmetic mean. We argue that this mean can be easily
+  misinterpreted, introduce biases in many models, and lead to wrong
+  conclusions being hastily reached.
+
+  We focus in this short note on two examples. First, the widespread
+  belief that increased stochasticity necessarily decreases population
+  growth is due to the fact that the arithmetic mean is kept constant
+  in models in which temporal variability is varied. This choice of
+  mean does not rely on sound biological basis, and this folklore is
+  simply a statistical artefact. We propose a distribution that allows
+  the level of environmental stochasticity to be varied in models
+  without changing the population growth rate. Our other focus is that
+  for demographic rates such as survival, the reported average is
+  almost always the arithmetic mean, and using this mean in population
+  models results in positive bias in long-term population growth.
+
+.  how mean survival
+  rates are generally calculated.is convenient as a
+  measure of central tendency, the geometric mean is the actual driver
+  of multiplicative processes It is widely recognised that
+  environmental stochasticity leads to a decrease in the long-term
+  population growth rate. We argue that this effect is a modelling
+  artefact, due to the way stochasticity is integrated in models of
+  population dynamics, and more generally because the arithmetic mean
+  is the type of average. We propose two distributions that preserve
+  the geometric mean of demographic rates regardless of the level of
+  environmental stochasticity. There is no sound basis to fix the
+  arithmetic mean and change the level, and that this leads to a
+  negative bias in projected growth rates. The fundamental problem
+  lies in the fact that the geometric mean of the demographic
+  parameters is lowered with increased stochasticity when using the
+  distributions commonly used in demographic models. However, this
+  effect does not have a real ecological basis. The geometric mean can
+  be kept constant regardless the level of stochasticity if the
+  geometric mean is raised to the power of a random variable whose
+  distribution has an arithmetic mean of 1 and is positive. A gamma
+  distribution with equal shape and rate parameters satisfies this
+  condition, and the value of these parameters can be easily
+  determined to match the desired level of stochasticity.  We
+  illustrate our point by running simulations based on published
+  annual adult survival rates calculated from 43 years of ringing and
+  dead recovery of European shag (\textit{Phalacrocorax aristotelis}).
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+  average \sep arithmetic mean \sep geometric mean \sep stochasticity
+  \sep population modelling \sep stochastic growth rate \sep survival
+  \sep bias
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+
+%% main text
+\section{Introduction}
+\label{sec:intro}
+The rule of inequality of arithmetic and geometric means, also called
+the AM-GM inequality, states that the geometric mean of a set of
+non-negative real numbers is less than the arithmetic mean, with the
+two means being equal only when all the numbers are the same. 
+The difference increases with variance, as for any distribution, 
+the geometric ($G$) and the arithmetic ($A$)
+means are related by the following formula
+\citep{lewontin_population_1969}:
+
+\[ G \cong A \exp \left(\frac{-\sigma^2}{2 A^2} \right) \]
+
+The capacity of each mean to be a useful measure of central tendency
+depends on the nature of the process being examined. In additive
+processes, the arithmetic mean is most useful, whereas in
+multiplicative processes, the geometric mean is best.
+
+In ecology, most processes are multiplicative. For instance, with a
+constant growth rate $\lambda$ and in absence of density dependence,
+the population size after $T$ years is
+\[ N_{T} = N_{0} \lambda^T \]
+Similarly the number of survivors $S$ under a constant annual survival
+rate $\phi$ is \[ S_{T} = S_{0} \phi^T \]
+
+However, environments in which individuals are born and die always
+vary over time, resulting in variations in vital rates. The
+distribution of a variable rate can be summarised by an average and a
+spread. In order to be useful, the average should be reported so that
+the process that was modelled can be re-created and simulated. In the
+case of survival, the average should be the geometric mean $G$, so
+that
+\[ N_{T} = N_{0} \prod_{t=1}^{T} \phi_{t} = N_{0} G^T \]
+Unfortunately, common methods for estimating survival, such as program
+MARK for capture-recapture data \citep{white_program_1999}, report the
+arithmetic mean. Using this mean naively in a deterministic matrix
+population model for example may therefore lead to the overall
+survival of individuals to be overestimated. Although the bias may not
+be large when the temporal variation in the original data is small,
+the multiplicative nature of survival processes is likely to be
+significant when population projections are made on a large time
+frame.
+
+
+In stochastic models, the correct geometric mean can be obtained from
+the distribution of survival rates defined from both the estimated
+arithmetic mean and process variance, provided these two parameters
+are correctly estimated. However, one might want to simulate the
+dynamics of the population under increased stochasticity, either
+because the data have been collected over few years and the variation
+over time is suspected to be non-representative, or because of
+suspected future increase due to climate change for example.
+
+Many studies have modelled the demographic impact of increased
+stochasticity by changing the variance of demographic rates while
+keeping the arithmetic mean fixed
+\citep[e.g.,][]{frederiksen_demographic_2008,schmutz_stochastic_2009,samaranayaka_modelling_2010}.
+Because increased stochasticity decreases the geometric mean
+relatively to the arithmetic mean, it is normal that these studies
+found lower stochastic growth rates, and some authors have concluded
+from this result that climate change will globally decrease
+populations' growth rate. It is surprising that the focus has been on
+maintaining the arithmetic mean fixed as it has little value for rates
+and multiplicative processes. The arithmetic mean of physical
+processes such as rainfall and temperature may well be constant,
+species are likely to respond non-linearly to changes from the mean
+\citep{drake_population_2005}, and the decision of keeping the
+arithmetic mean constant instead of the geometric one is not based on
+biological ground.
+
+the stochastic population
+growth rate ($\lambda_{s}$) may be found via simulation using the
+following formula \citep{caswell_matrix_2001}
+
+\[
+\lambda_{s} = \exp \Big( \frac{1}{T} \big( \ln(N_{T}) -
+  \ln(N_{0}) \big) \Big)
+\]
+
+with $N_{i}$ being the population size at time $i$, and $T$ the number
+of time steps in the model. This formula is simply the geometric mean
+of the population growth rate at each time step ($\lambda_{t \to t+1}
+= N_{t+1}/N_{t}$). Similarly, the number of survivors after $T$ time
+steps is $N_{T} = N_{0} S_{1} S_{2} ... S_{T} = N_{0} G^T$ with $G$
+being the geometric mean of $S$. The deterministic growth rate should
+therefore be calculated using the geometric mean of $S$, not the
+arithmetic mean as commonly done.
+
+
+
+
+Population growth rates always vary in time, either due to the
+realisation of discrete events such births and deaths (termed
+demographic stochasticity), or due to the variations in the mean
+demographic parameters following variations in the environment
+(environmental stochasticity). Except when population sizes are very
+small, the latter is generally the dominant source of
+variability. Stochasticity is important to take into account in models
+of population dynamics as populations can decline by chance over a
+period of time and eventually go extinct even when their intrinsic
+growth rate is positive, and vice-versa. However, modelling
+environmental stochasticity is not trivial. This is mainly due to the
+fact that the statistical distribution of demographic parameters
+varying in time and the degree of temporal autocorrelation of these
+variations are typically unknown, because most time series of
+demographic estimates are only a few years long.
+
+In the case of survival rates, modelling the trajectory of populations
+over time often implies drawing each simulated year the value of
+survival rates from a distribution of mean equal to the geometric mean
+of survival rates estimated from consecutive years. Various
+distributions have been used. For instance, the normal \citep[e.g.,
+][]{winemiller_life_2002} and the log-normal distributions are the two
+options proposed in the statistical package RAMAS-GIS
+\citep{akcakaya_ramas_2002} often used for Population Viability
+Analysis. The beta, the logit-normal, the probit-normal, the
+lognormal-power, and the truncated-gamma distributions are also
+popular \citep{kaye_effect_2003,samaranayaka_modelling_2010}. However,
+the long-term stochastic population growth rate obtained by simulation
+is robust to the choice of these distributions
+\citep{samaranayaka_modelling_2010}.
+
+In a classic scenario, one wants to estimate the growth rate of a
+population in order to assess if this population is at risk from
+extinction or how its dynamics would respond to various
+managements. Data on demographic parameters are collected in the field
+for a few years, and then analysed, providing for each parameter a
+mean estimate and its associated standard error. These estimates are
+then plugged in a population model, often a matrix population model
+\citep{caswell_matrix_2001}, and many trajectories of the population
+are simulated over a certain time frame in order to calculate the
+growth rate. Environmental stochasticity is included in the model by
+drawing each year the value of the demographic parameters from one of
+the previously described distributions, parametrised to match the mean
+and the process variance (removing the sampling variance) estimated
+from field data. Because field data are typically collected over a
+small number of years, the temporal variation in the demographic
+parameters is often imprecisely known and modellers might run the
+simulations with various levels of stochasticity. By doing so, many
+modellers realised that increasing stochasticity leads to a decrease
+of the stochastic growth rate, and it has been acknowledged that this
+decrease is caused by a decrease in the geometric mean of the
+distribution of the parameters, which is driving the dynamics.
+
+This fact is now widely accepted, and its evolutionary consequences
+have been explored, such as the negative correlation between the
+temporal variability of a parameter and the sensitivity of growth rate
+to this parameter \citep{pfister_patterns_1998}. 
+
+If estimates of vital rates are only available for few years, as it is
+commonly the case, their probability distribution cannot be determined
+from the data, and modellers need to choose one distribution, assumed
+to approximate reality. Various distributions are commonly used. For
+instance, the normal \citep[e.g.,][]{winemiller_life_2002} and the
+log-normal distributions are the two possibilities proposed in the
+software package RAMAS-GIS \citep{akcakaya_ramas_2002} often used
+for Population Viability Analysis. The beta, the logit-normal, the
+probit-normal, the lognormal-power, and the truncated-gamma
+distributions are also popular
+\citep{kaye_effect_2003,samaranayaka_modelling_2010}. For demographic
+rates, it is more
+convenient to choose a distribution bound between 0 and 1. For
+long-lived species, i.e. with high annual survival rate, normal or
+lognormal distributions for instance can provide rates higher than 1,
+and truncation is not preferable, as it can introduce biases if not
+corrected \citep{kaye_effect_2003}. It has been
+however shown that the long-term stochastic population growth rate
+obtained by simulation is robust to the choice between the beta,
+the logit-normal, the probit-normal, and the lognormal-power distributions
+\citep{samaranayaka_modelling_2010}. But is this growth rate correct?
+
+If estimates of survival rates are available for $n$ years ($S_1$,
+$S_2$, ..., $S_n$), then the overall annual survival rate is the
+geometric mean:
+\[ G = \sqrt[n]{\prod_{i=1}^{n} S_{i}} = \exp(\frac{1}{n}\sum_{i=1}^{n}\ln(S_{i})) \]
+
+The choice of the distribution of annual survival rates should be
+therefore made so that simulated individuals have the same chance of
+survival as in the observed population. Statistically speaking, the
+geometric mean of the sample drawn from this distribution should
+therefore match that from the observed population. However, it is
+interesting that all commonly used distributions compared in
+\citep{samaranayaka_modelling_2010} lead to lower geometric means
+because the distributions are parametrised according to the arithmetic
+mean. It is well known that the geometric is always less than the
+arithmetic one, and that the difference We argue that this is a
+statistical artifact, not a fact of life. Indeed, the geometric mean
+can be kept constant regardless of the level of stochasticity. One
+solution we identified is to draw samples of survival rates following
+\[ S = \hat{G}^x \]
+with $\hat{G}$ being the geometric mean of observed survival rates,
+and $x$ a random variable distributed from a positive distribution
+having an arithmetic mean equal to 1. One suitable distribution that
+can satisfy these properties is the gamma distribution, characterised
+by the following probability density function (pdf)
+\[P(x) = x^{k-1}\rho^{k}\frac{e^{-x \rho}}{\Gamma(k)} \] 
+with $\Gamma$ being the gamma function, $k$ the shape, and $\rho$ the
+rate (note that the pdf function is sometimes parametrised with the
+scale, being the inverse the rate). The arithmetic mean of the gamma
+distribution is $k/\rho$ and can therefore be constrained to 1
+if the rate $\rho$ is set equal to the shape $k$. The variance of $S$
+can therefore be controlled with only one parameter, the shape of the
+gamma distribution $k$ (Figure \ref{fig:gamma}). 
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=.55\textwidth]{plots/gamma_shapes.pdf}
+\end{center}
+\caption{Gamma-power distribution of simulated annual survival rate under various
+  levels of environmental stochasticity. The geometric mean is fixed
+  here to 0.7 and the shape of the gamma distribution is equal to 1, 2, 5, and 10. }
+\label{fig:gamma}
+\end{figure}
+
+
+To illustrate the problem, we used a published time series of 40 annual
+adult survival rates of European shag \citep[\textit{Phalacrocorax
+  aristotelis};][]{frederiksen_demographic_2008}. These estimates,
+obtained from manually digitising the Figure 5 in
+\citet{frederiksen_demographic_2008} with the software g3data
+(http://github.com/pn2200/g3data), were estimated from an unconstrained
+time-varying model and can therefore be considered as `observed'
+values.
+
+We used the same simple population model as in
+\citet{frederiksen_demographic_2008}, with 3 age classes (1 year-old,
+2 year-old, and adults), with a pre-breeding census and only for
+females.  The transition matrix is
+\[
+M = \begin{bmatrix}
+0    & 0    & f   \\ 
+S_{1} & 0    & 0   \\ 
+0    & S_{2} & S_{a}
+\end{bmatrix}
+\]
+with $S_{1,2,a}$ being the annual survival rate of 1 year-old, 2
+year-old, and adults (from 3 year-old) respectively, $f$ the number of
+chicks per female surviving to age 1.
+
+For illustration only, we assumed that $f$, $S_{1}$, and $S_{2}$ were
+constant over time, and were chosen so that the simulated population
+trajectories would be approximately constant. The chosen values were
+$f=0.9$, $S_{1}=0.5$, and $S_{2}=0.7$. By using these values and by
+fixing $S_{a}$ to the geometric mean of the observed values (0.832),
+the deterministic long-term growth rate of the population without
+carrying capacity is $\lambda = 1.064$.
+
+%%  3 figures to show fit of models to 'observed' survival rates
+
+%% 2 figures; 1 to show simulation trajectories and 1 for distribution
+%% of Ns after 50 years under the 3 models (bootstrap, gamma-power, logit-normal)
+
+- ok if mean survival is the arithmetic mean (as provided by MARK)
+
+
+
+
+
+\section{Material and methods}
+\label{sec:methods}
+
+\section{Results}
+\label{sec:results}
+
+\section{Discussion}
+\label{sec:discussion}
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+\section{Parametrisation of the gamma distribution}
+%% \label{}
+
+%% References
+%%
+%% Following citation commands can be used in the body text:
+%%
+%%  \citet{key}  ==>>  Jones et al. (1990)
+%%  \citep{key}  ==>>  (Jones et al., 1990)
+%%
+%% Multiple citations as normal:
+%% \citep{key1,key2}         ==>> (Jones et al., 1990; Smith, 1989)
+%%                            or  (Jones et al., 1990, 1991)
+%%                            or  (Jones et al., 1990a,b)
+%% \cite{key} is the equivalent of \citet{key} in author-year mode
+%%
+%% Full author lists may be forced with \citet* or \citep*, e.g.
+%%   \citep*{key}            ==>> (Jones, Baker, and Williams, 1990)
+%%
+%% Optional notes as:
+%%   \citep[chap. 2]{key}    ==>> (Jones et al., 1990, chap. 2)
+%%   \citep[e.g.,][]{key}    ==>> (e.g., Jones et al., 1990)
+%%   \citep[see][pg. 34]{key}==>> (see Jones et al., 1990, pg. 34)
+%%  (Note: in standard LaTeX, only one note is allowed, after the ref.
+%%   Here, one note is like the standard, two make pre- and post-notes.)
+%%
+%%   \citealt{key}          ==>> Jones et al. 1990
+%%   \citealt*{key}         ==>> Jones, Baker, and Williams 1990
+%%   \citealp{key}          ==>> Jones et al., 1990
+%%   \citealp*{key}         ==>> Jones, Baker, and Williams, 1990
+%%
+%% Additional citation possibilities
+%%   \citeauthor{key}       ==>> Jones et al.
+%%   \citeauthor*{key}      ==>> Jones, Baker, and Williams
+%%   \citeyear{key}         ==>> 1990
+%%   \citeyearpar{key}      ==>> (1990)
+%%   \citetext{priv. comm.} ==>> (priv. comm.)
+%%   \citenum{key}          ==>> 11 [non-superscripted]
+%% Note: full author lists depends on whether the bib style supports them;
+%%       if not, the abbreviated list is printed even when full requested.
+%%
+%% For names like della Robbia at the start of a sentence, use
+%%   \Citet{dRob98}         ==>> Della Robbia (1998)
+%%   \Citep{dRob98}         ==>> (Della Robbia, 1998)
+%%   \Citeauthor{dRob98}    ==>> Della Robbia
+
+
+%% References with bibTeX database:
+
+\bibliographystyle{model2-names}
+\bibliography{bib}
+
+%% Authors are advised to submit their bibtex database files. They are
+%% requested to list a bibtex style file in the manuscript if they do
+%% not want to use model2-names.bst.
+
+%% References without bibTeX database:
+
+% \begin{thebibliography}{00}
+
+%% \bibitem must have one of the following forms:
+%%   \bibitem[Jones et al.(1990)]{key}...
+%%   \bibitem[Jones et al.(1990)Jones, Baker, and Williams]{key}...
+%%   \bibitem[Jones et al., 1990]{key}...
+%%   \bibitem[\protect\citeauthoryear{Jones, Baker, and Williams}{Jones
+%%       et al.}{1990}]{key}...
+%%   \bibitem[\protect\citeauthoryear{Jones et al.}{1990}]{key}...
+%%   \bibitem[\protect\astroncite{Jones et al.}{1990}]{key}...
+%%   \bibitem[\protect\citename{Jones et al., }1990]{key}...
+%%   \harvarditem[Jones et al.]{Jones, Baker, and Williams}{1990}{key}...
+%%
+
+% \bibitem[ ()]{}
+
+% \end{thebibliography}
+
+\end{document}
+
+%%
+%% End of file `elsarticle-template-2-harv.tex'.
