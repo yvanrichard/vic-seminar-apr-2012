@@ -350,6 +350,7 @@ F-statistic: 2.859e+04 on 2 and 9997 DF,  p-value: < 2.2e-16
 \includegraphics[width=1\textwidth]{images/LaTeX-logo.png}
 \column{0.6\textwidth}
 \begin{itemize}
+\item Compiled documents, not WYSIWYG
 \item Very common
 \item Most scientific journals provide their own template
 \item Beautiful typesetting
@@ -406,7 +407,8 @@ Including references is easy with BibTeX!
 References are stored in a text file (e.g.: refs.bib):
 \begin{verbatim}
 @article{richard_cost_2010,
-    title = "Cost distance modelling of landscape connectivity and gap-crossing ability using radio-tracking data",
+    title = "Cost distance modelling of landscape connectivity 
+             and gap-crossing ability using radio-tracking data",
     volume = "47",
     number = "3",
     journal = "Journal of Applied Ecology",
@@ -434,6 +436,11 @@ Then each reference is called in the LaTeX document by its tag:
 
 
 \begin{frame}{\textbf{Workflow management}}
+\begin{columns}
+\column{0.4\textwidth}
+\centering
+\includegraphics[width=1\textwidth]{images/make-logo.jpg}
+\column{0.6\textwidth}
   \begin{itemize}
   \item GNU make
   \item Centralise jobs to be run
@@ -441,6 +448,7 @@ Then each reference is called in the LaTeX document by its tag:
   \item Jobs can be run in parallel in order to use several computer processors
   \item Can be used to document the whole workflow.
   \end{itemize}
+\end{columns}
 \end{frame}
 
 
@@ -466,7 +474,7 @@ that easy.
 \end{frame}
 
 
-\begin{frame}{\textbf{Version control - Distribution}}
+\begin{frame}{\textbf{Version control}}
 \begin{columns}
 \column{0.4\textwidth}
 \centering
@@ -474,11 +482,11 @@ that easy.
 \column{0.6\textwidth}
 \begin{itemize}
 \item Saves all gradual changes of files
-\item Allows to seemingly keep one version of each file
-\item Do not be afraid to delete stuff
-\item Can always come back to previous versions
+\item Allows to safely keep only one version of each file 
+\item Do not be afraid to delete stuff! You can always come back to previous versions
 \item Provides an easy outlook of all modifications
 \item Utilities to compare versions
+\item Great also for cooperative work
 \end{itemize}
 \end{columns}
 \end{frame}
@@ -486,32 +494,53 @@ that easy.
 
 \begin{frame}[fragile] % Notice the [fragile] option beside \begin{frame} %
 \frametitle{\textbf{Workflow management}}
-Easy commands:
-\verb=git status=: to get list of all modified files
-\verb=git add .=: to inform git to save all modifications
-\verb=git commit -m 'Finished intro of chapter 3'=: to save locally the
-current state of modifications, with a comment to describe the changes
+Easy commands: \\
+\verb=git status=: to get list of all modified files \\
+\verb=git add .=: to inform git to save all modifications \\
+\verb=git commit -m "Finished intro of chapter 3"=: to save locally the
+current state of modifications, with a comment to describe the changes \\
 \verb=git push=: to save the commits to the server
 \end{frame}
 
 
-
-all:  report.pdf
-
-report.pdf:  report.tex datafile.csv refs.bib
-    bibtex report 
-    pdflatex report
-
-datafile.csv:  analyse.r inputdata.csv
-    Rscript analyse.r
-\end{verbatim}}
-\vspace{0.25cm}
-You run the whole process by only typing \verb=make= in a terminal, it's
-that easy.
-\includegraphics[width=1\textwidth]{images/workflow.png}
-\vspace{-1cm}
+\begin{frame}{\textbf{Distribution}}
+\begin{columns}
+\column{0.4\textwidth}
+\centering
+\includegraphics[width=1\textwidth]{images/github-logo.jpg}
+\column{0.6\textwidth}
+\begin{itemize}
+\item GitHub is a web interface and service to store your git project
+\item Makes it easy to access your project from anywhere and to share
+  it with others
+\item Free for open-source projects
+\item Great for issue tracking (to-do list)
+\end{itemize}
+\end{columns}
 \end{frame}
 
+
+
+\begin{frame}{\textbf{Conclusions}}
+\begin{itemize}
+\item Great suite of tools for doing proper research, and they are all free!
+\item Risk of mistakes minimised
+\item Transparent and reproducible
+\item Fun! Just like playing Lego
+\item Adopting only one of these tools even is a great improvement
+  over the traditional bad habits
+\item This workflow allows tackling some large projects comfortably
+  that would be impossible otherwise
+\item These skills will help you all your life and make your life
+  easier, and are great to get a job
+\end{itemize}
+But...
+\begin{itemize}
+\item It looks scary at first
+\item Big learning curve
+\end{itemize}
+But still worth it 100\%!
+\end{frame}
 
 
 % \begin{frame}{\textbf{Maximum growth rate - $r_{\max}$}}
