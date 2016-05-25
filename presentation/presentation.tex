@@ -126,7 +126,7 @@ change something.
   do additional analyses
 \item You open your project folder only to discover 20-odd different
   versions of the data
-\item Which did you use?
+\item Which one did you use?
 \item After being fairly confident of the correct one to use, you
   re-do the analyses, and find different results!
 \item Eventually, you manage by trial and error to find the same
@@ -231,6 +231,19 @@ Sounds trivial, but it is rarely the case!
 \end{frame}
 
 
+\begin{frame}{\textbf{Scripting power}}
+  \begin{itemize}
+  \item Everything is written, no lost clicks
+  \item Reproducible and transparent
+  \item Easily changed
+  \item Code is re-usable
+  \item Repetitive tasks are done using loops
+  \item Generally quicker than clicks and navigating menus
+  \item Don't Repeat Yourself (DRY) philosophy
+  \end{itemize}
+\end{frame}
+
+
 \begin{frame}{\textbf{Open-source software}}
 \begin{itemize}
 \item Free!
@@ -242,7 +255,7 @@ Sounds trivial, but it is rarely the case!
 \end{frame}
 
 
-\begin{frame}{\textbf{Main functions}}
+\begin{frame}{\textbf{Main jobs}}
 \begin{itemize}
 \item Data preparation, exploration, analysis, and plotting
 \item Reporting
@@ -284,10 +297,11 @@ dat <- read.csv("file-with-data.csv")
 dat$var3 <- dat$var1 + dat$var2
 
 ## Plot
-plot(var1, var2)
+plot(Xvar, Yvar)
 \end{verbatim} % Extra carriage return causes problem wit verbatim %
 \end{example}
 \column{0.48\textwidth}
+\vspace{1.5cm}
 \includegraphics[width=1\textwidth]{images/corr.png}
 \end{columns}
 \end{frame}
@@ -296,7 +310,7 @@ plot(var1, var2)
 \frametitle{\textbf{R language}}
 Fitting a linear model
 \begin{verbatim}
-mod <- lm(dep ~ indep1 + indep2)
+mod <- lm(dep ~ var1 + var2)
 summary(mod)
 \end{verbatim}
 
@@ -331,17 +345,6 @@ F-statistic: 2.859e+04 on 2 and 9997 DF,  p-value: < 2.2e-16
 \vspace{-1cm}
 \end{frame}
 
-\begin{frame}{\textbf{Scripting power}}
-  \begin{itemize}
-  \item Everything is written, no lost clicks
-  \item Reproducible
-  \item Easily changed
-  \item Code is re-usable
-  \item Repetitive tasks are done using loops
-  \item Generally quicker than clicks and navigating menus
-  \end{itemize}
-\end{frame}
-
 
 \begin{frame}{\textbf{Reporting}}
 \begin{columns}
@@ -373,7 +376,7 @@ F-statistic: 2.859e+04 on 2 and 9997 DF,  p-value: < 2.2e-16
 
 \begin{frame}{\textbf{Calling R into LaTeX using Sweave}}
   \begin{itemize}
-  \item Sweave lets data and tables from R to be included in LaTex documents
+  \item Sweave lets data and tables from R to be included in LaTeX documents
   \item Why copying and pasting data manually when you can call them directly?
   \item Enormous time saver
   \item Chances of mistakes are minimal
@@ -426,7 +429,7 @@ Then each reference is called in the LaTeX document by its tag:
 
 \begin{frame}{\textbf{Bibliography in LaTeX}}
   \begin{itemize}
-  \item BibTex format is very common
+  \item BibTeX format is very common
   \item References in this format can be downloaded from Google
     Scholar, imported from Zotero, and from journals web site
   \item Templates exist for all journals
@@ -481,6 +484,7 @@ that easy.
 \includegraphics[width=1\textwidth]{images/git-logo.png}
 \column{0.6\textwidth}
 \begin{itemize}
+\item GIT
 \item Saves all gradual changes of files
 \item Allows to safely keep only one version of each file 
 \item Do not be afraid to delete stuff! You can always come back to previous versions
@@ -523,7 +527,7 @@ current state of modifications, with a comment to describe the changes \\
 
 \begin{frame}{\textbf{Conclusions}}
 \begin{itemize}
-\item Great suite of tools for doing proper research, and they are all free!
+\item Great suite of tools for doing proper research, and it's free!
 \item Risk of mistakes minimised
 \item Transparent and reproducible
 \item Fun! Just like playing Lego
@@ -533,11 +537,11 @@ current state of modifications, with a comment to describe the changes \\
   that would be impossible otherwise
 \item These skills will help you all your life and make your life
   easier, and are great to get a job
+\item Open research movement; make research more accessible!
 \end{itemize}
 But...
 \begin{itemize}
-\item It looks scary at first
-\item Big learning curve
+\item Scary at first; learning curve significant
 \end{itemize}
 But still worth it 100\%!
 \end{frame}
